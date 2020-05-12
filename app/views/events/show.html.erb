@@ -1,34 +1,45 @@
 <p id="notice"><%= notice %></p>
+ 
 
-<p>
-  <strong>Start date:</strong>
-  <%= @event.start_date %>
-</p>
+<div class="container">
+	<div class="row text-center justify-content-center mt-3">
+		<!-- Event title -->
+		<h3 class="col-12"><%="#{@event.title}" %></h3>
+<p class="col-12">
+			<small class="text-muted">Description</small><br/>
+			<%= @event.description %>
+		</p>
 
-<p>
-  <strong>Duration:</strong>
-  <%= @event.duration %>
-</p>
+		<!-- Number of attendees -->
+		<p class="col-12">
+			<small class="text-muted">Number of attendees</small><br/>
+			<%= @event.users.count %>
+		</p>
+		
+		<!-- Organizer email -->
+		<p class="col-12">
+			<small class="text-muted">Organizer</small><br/>
+			<%= @event.organizer.email %>
+		</p>
+		
+		<!-- Start date -->
+		<p class="col-12">
+			<small class="text-muted">Start date</small><br/>
+			<%= @event.start_date %>
+		</p>
+		
+		<!-- Event location -->
+		<p class="col-12">
+			<small class="text-muted">Location</small><br/>
+			<%= @event.location %>
+		</p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @event.title %>
-</p>
+		<!-- Event price -->
+		<p class="col-12">
+			<small class="text-muted">Price</small><br/>
+			<%= "#{@event.price} €" %>
+		</p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @event.description %>
-</p>
-
-<p>
-  <strong>Price:</strong>
-  <%= @event.price %>
-</p>
-
-<p>
-  <strong>Location:</strong>
-  <%= @event.location %>
-</p>
 
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>
